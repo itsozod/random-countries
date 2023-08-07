@@ -1,37 +1,75 @@
-*, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 body {
-    position: relative;
-    min-height: 100vh;
+  position: relative;
+  min-height: 100vh;
 }
 body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-image: url(images/world-map.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    opacity: 0.9;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url(images/world-map.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.9;
 }
-
-
 #header {
-    position: relative;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(to right, lightblue, lightgreen);
+  height: 50px;
+  line-height: 50px;
+}
+#main {
+  position: relative;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.btn {
+  padding: 8px;
+  border-radius: 10px;
+  border: 2px solid lightblue;
+  background-color: lawngreen;
+  font-weight: bold;
+}
+.generate {
+  color: white;
+  display: none;
+}
+.country-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  margin-top: 50px;
+}
+.country-container.none {
+    display: none;
+}
+.card {
+    max-width: 400px;
+    height: auto;
+    padding: 10px;
     display: flex;
     justify-content: center;
-    background-image: linear-gradient(to right, lightblue, lightgreen);
-    height: 50px;
-    line-height: 50px;
+    flex-direction: column;
+    align-items: center;
+    background-color: lightskyblue;
 }
-
-/* h3 {
-    display: none;
-} */
