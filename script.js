@@ -16,6 +16,9 @@ async function showCountry() {
     const countries = data.map((country) => ({
       name: country.name.common,
       flag: country.flags.png,
+      capital: country.capital,
+      population: country.population,
+      region: country.region,
     }));
     card.classList.remove("none");
     generateMessage.style.display = "flex";
@@ -35,8 +38,24 @@ async function showCountry() {
       countryFlag.classList.add("country-flag");
       countryFlag.src = randomCountry.flag;
 
+      const countryCapital = document.createElement("p");
+      countryCapital.classList.add("country-capital");
+      countryCapital.textContent = `Capital: ${randomCountry.capital}`;
+
+      const countryPopulation = document.createElement("p");
+      countryPopulation.classList.add("country-population");
+      countryPopulation.textContent = `Population: ${randomCountry.population}`;
+
+      const countryRegion = document.createElement("p");
+      countryRegion.classList.add("country-region");
+      countryRegion.textContent = `Region: ${randomCountry.region}`;
+
+
       card.appendChild(countryName);
       card.appendChild(countryFlag);
+      card.appendChild(countryCapital);
+      card.appendChild(countryPopulation);
+      card.appendChild(countryRegion);
       countryContainer.appendChild(card);
       btn.addEventListener("click", showCountry);
     }, 2000);
