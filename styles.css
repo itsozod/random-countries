@@ -3,8 +3,28 @@
     margin: 0;
     padding: 0;
 }
+body {
+    position: relative;
+    min-height: 100vh;
+}
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url(images/world-map.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.9;
+}
+
 
 #header {
+    position: relative;
     display: flex;
     justify-content: center;
     background-image: linear-gradient(to right, lightblue, lightgreen);
