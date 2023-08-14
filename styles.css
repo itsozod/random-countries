@@ -36,6 +36,11 @@ body::before {
   height: 100vh;
   min-height: 100vh;
 }
+/* prevent visual glitch */
+.prevent-overflow {
+  overflow: hidden;
+}
+
 .button-container {
   display: flex;
   justify-content: center;

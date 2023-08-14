@@ -6,6 +6,7 @@ const generateMessage = document.querySelector(".generate");
 async function showCountry() {
   console.log("Button is clicked");
   btn.removeEventListener("click", showCountry);
+  document.body.classList.add("prevent-overflow");
   try {
     const response = await fetch(" https://restcountries.com/v3.1/all", {
       mode: "cors",
@@ -26,6 +27,7 @@ async function showCountry() {
     btn.removeEventListener("click", showCountry);
 
     setTimeout(() => {
+      document.body.classList.remove("prevent-overflow");
       card.classList.add("none");
       generateMessage.style.display = "none";
       const randomIndex = Math.floor(Math.random() * countries.length);
@@ -62,6 +64,7 @@ async function showCountry() {
   } catch (err) {
     console.log("Error fetch:", err);
     btn.addEventListener("click", showCountry);
+    document.body.classList.remove("prevent-overflow");
   }
 }
 
