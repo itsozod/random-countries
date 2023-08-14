@@ -7,7 +7,7 @@
 }
 body {
   position: relative;
-  min-height: 100vh;
+  overflow: hidden;
 }
 body::before {
   content: "";
@@ -34,6 +34,7 @@ body::before {
 }
 #main {
   position: relative;
+  height: 100vh;
 }
 .button-container {
   display: flex;
